@@ -1,7 +1,6 @@
-package Flixxer.Flixxer.Backend.DB;
+package Flixxer.Flixxer.Backend.models;
 
 import jakarta.persistence.*;
-import java.time.LocalDate;
 
 import lombok.Getter;
 import lombok.Setter;
