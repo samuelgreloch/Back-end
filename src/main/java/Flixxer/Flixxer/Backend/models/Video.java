@@ -3,6 +3,8 @@ package Flixxer.Flixxer.Backend.models;
 import jakarta.persistence.*;
 
 import java.time.LocalDate;
+import java.util.HashSet;
+import java.util.Set;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -12,6 +14,8 @@ import lombok.Setter;
 
 @Entity
 @Table(name = "video")
+@Getter
+@Setter
 public class Video {
 
 
@@ -49,7 +53,17 @@ public class Video {
         @Column
         private LocalDate releaseDate;
 
-    public long getContentId() {
+@ManyToMany
+@JoinTable(
+        name = "video_genre"
+        , joinColumns = @JoinColumn(name = "video_id"),
+        inverseJoinColumns = @JoinColumn(name = "genre_id"
+                ))
+        private Set<Genre> genres = new HashSet<>();
+
+
+
+        public long getContentId() {
         return ContentId;
     }
 
