@@ -1,6 +1,6 @@
-package Flixxer.Flixxer.Backend.Controller;
+package Flixxer.Flixxer.Backend.controller;
 
-import Flixxer.Flixxer.Backend.DB.User;
+import Flixxer.Flixxer.Backend.models.User;
 import Flixxer.Flixxer.Backend.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
