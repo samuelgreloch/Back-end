@@ -2,6 +2,7 @@ package Flixxer.Flixxer.Backend.models;
 
 import jakarta.persistence.*;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 import lombok.Getter;
@@ -21,9 +22,9 @@ public class Genre {
     private String title;
 
     @ManyToMany(mappedBy = "genres")
-    private Set<Video> videos = new HashSet<>();
+    private List<Video> videos;
 
-
+//list
 
 
     public void setId(Long id) {

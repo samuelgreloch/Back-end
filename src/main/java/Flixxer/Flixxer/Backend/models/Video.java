@@ -3,13 +3,13 @@ package Flixxer.Flixxer.Backend.models;
 import jakarta.persistence.*;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 import lombok.Getter;
 import lombok.Setter;
-
-
 
 
 @Entity
@@ -59,9 +59,9 @@ public class Video {
         , joinColumns = @JoinColumn(name = "video_id"),
         inverseJoinColumns = @JoinColumn(name = "genre_id"
                 ))
-        private Set<Genre> genres = new HashSet<>();
+        private List<Genre> genres;
 
-
+//list iterable
 
         public long getContentId() {
         return ContentId;
