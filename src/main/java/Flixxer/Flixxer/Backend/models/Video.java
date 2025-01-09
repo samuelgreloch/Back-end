@@ -28,10 +28,6 @@ public class Video {
         @Column
         private String title;
 
-        @Getter
-        @Setter
-        @Column
-        private String genre;
 
         @Getter
         @Setter
