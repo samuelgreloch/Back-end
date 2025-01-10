@@ -5,6 +5,7 @@ import Flixxer.Flixxer.Backend.models.Video;
 import Flixxer.Flixxer.Backend.repositories.GenreRepository;
 import Flixxer.Flixxer.Backend.repositories.VideoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -96,4 +97,16 @@ public class VideoController {
         videoRepository.delete(deleteVideo);
         return "Video deleted successfully.";
     }
+
+    @GetMapping("/videos/{id}")
+    public ResponseEntity<Video> getVideoById(@PathVariable Long id) {
+        Optional<Video> video = videoRepository.findById(id);
+        if (video.isPresent()) {
+            return ResponseEntity.ok(video.get());
+        } else {
+            return ResponseEntity.notFound().build();
+        }
+    }
+
+
 }
